@@ -4,9 +4,11 @@ package rest.entities;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-@XmlRootElement(name="Employe")
+
 @ApiModel(description = "entité enrégistré dans swagger")
+@XmlRootElement(name="Employe")
 public class Employe {
 	
 	private int cin;
@@ -26,6 +28,7 @@ public class Employe {
 	}
 	
 	@ApiModelProperty(value="unique cin")
+	@XmlElement(name="Cin")
 	public int getCin() {
 		return cin;
 	}
@@ -33,6 +36,7 @@ public class Employe {
 		this.cin = cin;
 	}
 	@ApiModelProperty(value="nom de l'employé")
+	@XmlElement(name="nom")
 	public String getNom() {
 		return nom;
 	}
@@ -42,6 +46,7 @@ public class Employe {
 	
 //	@XmlElement(name="FirstName")
 	@ApiModelProperty(value="prenom de l'employé")
+	@XmlElement(name="prenom")
 	public String getPrenom() {
 		return prenom;
 	}
